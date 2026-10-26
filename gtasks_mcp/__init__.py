@@ -1,0 +1,3 @@
+"""A local, single-user Google Tasks MCP server."""
+
+__version__ = "0.2.0"

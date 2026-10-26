@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "google-tasks": {
+      "command": "/absolute/path/to/google-tasks-mcp/.venv/bin/python",
+      "args": ["/absolute/path/to/google-tasks-mcp/server.py"],
+      "env": {
+        "GTASKS_TIMEZONE": "UTC",
+        "GTASKS_READ_ONLY": "true"
+      }
+    }
+  }
+}

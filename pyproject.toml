@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "personal-gtasks-mcp"
+version = "0.2.0"
+description = "A local Google Tasks MCP server with explicit write authorization and typed tools."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = [
+  "mcp[cli]==2.3.0",
+  "google-api-python-client>=2.201,<3",
+  "google-auth>=2.62,<3",
+  "google-auth-oauthlib>=1.5,<2",
+  "google-auth-httplib2>=0.4.4,<1",
+  "httplib2>=0.22,<1",
+  "pydantic>=2.14,<3",
+  "requests>=2.32,<3",
+  "oauthlib>=3.3,<5",
+  "tzdata>=2025.2",
+]
+
+[project.optional-dependencies]
+dev = ["ruff>=0.11,<1", "build>=1.2,<2"]
+
+[project.scripts]
+gtasks-mcp = "gtasks_mcp.server:main"
+gtasks-auth = "gtasks_mcp.auth:main"
+
+[tool.setuptools.packages.find]
+include = ["gtasks_mcp*"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 110
+extend-exclude = ["work"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B"]

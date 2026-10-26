@@ -1,0 +1,7 @@
+include README.md LICENSE CONTRIBUTING.md CHANGELOG.md pyproject.toml requirements.lock server.py auth.py .env.example .gitignore
+recursive-include docs *.md
+recursive-include examples *.json
+recursive-include scripts *.py
+recursive-include tests *.py
+include .github/workflows/ci.yml
+global-exclude credentials.json token.json client_secret*.json *.credentials.json *.token.json *.pyc
